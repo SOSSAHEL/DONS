@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: edonate.yml }
+    - { resource: sonata.yml }
 
 framework:
     esi: { enabled: true}

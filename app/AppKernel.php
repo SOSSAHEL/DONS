@@ -35,6 +35,12 @@ class AppKernel extends Kernel
             new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
 
+            //sonata admin
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+
             //Ecedi bundles
             new Ecedi\Donate\CoreBundle\DonateCoreBundle(),
 

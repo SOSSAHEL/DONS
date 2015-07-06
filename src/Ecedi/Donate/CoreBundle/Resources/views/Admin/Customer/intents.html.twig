@@ -1,0 +1,13 @@
+{# @since 2.5 #}
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+    {% for intent in object.intents  %}
+    {% set types = intent.typesLabel  %}
+    <div>
+        <strong>{{ intent.amount / 100 }} € </strong> <br />
+        {{ types[intent.type] | trans }} : {{ intent.status | trans }} <br />
+        {{ intent.affectationCode }} {{ intent.paymentMethod }} {{ intent.changedAt | date('d/m/Y') }}
+    </div>
+    {% endfor %}
+{% endblock %}

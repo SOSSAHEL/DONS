@@ -1,5 +1,39 @@
 #sonata.yml
 #
+sonata_admin:
+    title:      eDonate Administration
+    title_logo: bundles/donatecore/images/logo_small.png
+    options:
+        pager_links: 10
+
+    dashboard:
+            groups:
+                # Prototype
+                edonate.admin.group.donation:
+                    label: edonate.admin.group.donation
+                    label_catalogue: admin-label
+                    items:
+                        - sonata.admin.customer
+            blocks:
+                -
+                    position: left
+                    type: sonata.admin.block.admin_list
+                    settings:
+                        groups: [ edonate.admin.group.donation ]
+                -
+                    position: right
+                    type: sonata.block.service.text
+                    settings:
+                        content: >
+                            <h2>Welcome to the eDonate Dashboard</h2>
+                            <p>Test</p>
+                -
+                    position: right
+                    type: sonata.block.service.rss
+                    settings:
+                        title: Drupal Security Core
+                        url: https://drupal.org/security/rss.xml
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -7,3 +41,7 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
         # Your other blocks
+        sonata.block.service.text: ~
+        sonata.block.service.rss: ~
+        sonata.admin.block.search_result:
+            contexts: [admin]

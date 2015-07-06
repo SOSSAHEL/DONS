@@ -56,7 +56,7 @@ elfinder:
     prefix: /secured
 
 
-
+# sonata stuff
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /sonata

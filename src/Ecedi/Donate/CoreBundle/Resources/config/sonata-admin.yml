@@ -1,0 +1,18 @@
+# @since 2.5 Admin in now in CoreBundle
+services:
+    sonata.admin.customer:
+        class: Ecedi\Donate\CoreBundle\Admin\CustomerAdmin
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: edonate.admin.group.donation
+              label: edonate.admin.model.customer
+              label_catalogue: admin-label
+
+        arguments:
+            - ~
+            - Ecedi\Donate\CoreBundle\Entity\Customer
+            - ~
+        calls:
+            - [ setTranslationDomain, [admin]]
+            - [ setTemplate, [show, DonateCoreBundle:Admin:Customer/show.html.twig]]

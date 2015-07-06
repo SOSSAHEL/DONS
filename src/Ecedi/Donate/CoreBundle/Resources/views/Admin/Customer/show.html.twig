@@ -1,0 +1,9 @@
+{% extends "SonataAdminBundle:CRUD:show.html.twig" %}
+
+{% block show_title %}
+    <tr class="sonata-ba-view-title">
+        <th colspan="2">
+            {{ object.civility }} {{ object.firstName }} {{ object.lastName }}
+        </th>
+    </tr>
+{% endblock %}

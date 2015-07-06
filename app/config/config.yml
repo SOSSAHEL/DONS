@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: edonate.yml }
     - { resource: sonata.yml }
+    - { resource: @DonateCoreBundle/Resources/config/sonata-admin.yml }
 
 framework:
     esi: { enabled: true}

@@ -5,7 +5,15 @@ security:
         # @see http://symfony.com/doc/current/best_practices/security.html
         # Ecedi\Donate\CoreBundle\Entity\User: bcrypt
     role_hierarchy:
-        ROLE_USER : [ ROLE_SONATA_ADMIN, ROLE_SONATA_ADMIN_CUSTOMER_LIST, ROLE_SONATA_ADMIN_CUSTOMER_VIEW]
+        ROLE_USER :
+            - ROLE_SONATA_ADMIN
+            - ROLE_SONATA_ADMIN_CUSTOMER_LIST
+            - ROLE_SONATA_ADMIN_CUSTOMER_VIEW
+            - ROLE_SONATA_ADMIN_INTENT_LIST
+            - ROLE_SONATA_ADMIN_INTENT_VIEW
+            - ROLE_SONATA_ADMIN_LAYOUT_LIST
+            - ROLE_SONATA_ADMIN_LAYOUT_VIEW
+
         ROLE_CMS: ~
         ROLE_AFFECTATION: ~
         ROLE_ADMIN:         [ROLE_USER, ROLE_CMS, ROLE_AFFECTATION]

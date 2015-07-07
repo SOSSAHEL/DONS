@@ -6,7 +6,25 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: donation
-              label: "edonate.admin.model.customer"
+              label: "edonate.admin.model.customers"
+              label_catalogue: "sonata-admin"
+
+        arguments:
+            - ~
+            - Ecedi\Donate\CoreBundle\Entity\Customer
+            - ~
+        calls:
+            - [ setTranslationDomain, [admin]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+            - [ setTemplate, [show, DonateCoreBundle:Admin:Customer/show.html.twig]]
+
+    sonata.admin.intent:
+        class: Ecedi\Donate\CoreBundle\Admin\IntentAdmin
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: donation
+              label: "edonate.admin.model.intents"
               label_catalogue: "sonata-admin"
 
         arguments:

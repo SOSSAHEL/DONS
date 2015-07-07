@@ -15,11 +15,23 @@ sonata_admin:
                     label: edonate.admin.group.donation
                     label_catalogue: sonata-admin
                     items:
-                        -
-                            sonata.admin.customer
+                        - sonata.admin.customer
+                        - sonata.admin.intent
                         # -
                         #     route:        donate_front_home
                         #     label:        Front Office
+                cms:
+                    label: edonate.admin.group.cms
+                    label_catalogue: sonata-admin
+                    items:
+                        -
+                            sonata.admin.customer
+                users:
+                    label: edonate.admin.group.users
+                    label_catalogue: sonata-admin
+                    items:
+                        -
+                            sonata.admin.customer
             blocks:
                 -
                     position: left

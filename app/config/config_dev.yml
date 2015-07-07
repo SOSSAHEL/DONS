@@ -25,7 +25,7 @@ assetic:
 swiftmailer:
     delivery_address: %donate_core.email.webmaster%
 
-raul_fraile_ladybug:
-    theme: modern
-    expanded: false
-    silenced: false
+# raul_fraile_ladybug:
+#     theme: modern
+#     expanded: false
+#     silenced: false

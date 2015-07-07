@@ -2,8 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: edonate.yml }
-    - { resource: sonata.yml }
     - { resource: @DonateCoreBundle/Resources/config/sonata-admin.yml }
+    - { resource: sonata.yml }
 
 framework:
     esi: { enabled: true}

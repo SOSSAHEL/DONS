@@ -5,9 +5,9 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: edonate.admin.group.donation
-              label: edonate.admin.model.customer
-              label_catalogue: admin-label
+              # group: "donation"
+              label: "edonate.admin.model.customer"
+              label_catalogue: "sonata-admin"
 
         arguments:
             - ~
@@ -15,4 +15,5 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [admin]]
+            - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
             - [ setTemplate, [show, DonateCoreBundle:Admin:Customer/show.html.twig]]

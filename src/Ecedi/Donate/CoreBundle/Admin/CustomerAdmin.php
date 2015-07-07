@@ -100,19 +100,20 @@ class CustomerAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('id')
-            ->add('firstName')
-            ->addIdentifier('lastName')
-            ->addIdentifier('email')
+            ->addIdentifier('id', null, array(
+                'route' => array('name' => 'show'),
+            ))
+            ->addIdentifier('firstName', null, array(
+                'route' => array('name' => 'show'),
+            ))
+            ->addIdentifier('lastName', null, array(
+                'route' => array('name' => 'show'),
+            ))
+            ->addIdentifier('email', null, array(
+                'template' => 'DonateCoreBundle:Admin:Customer/email.html.twig', ))
             ->add('phone')
             ->add('addressZipcode')
             ->add('addressCity')
-            ->add('_action', 'actions', array(
-                'actions' => array(
-                    'show' => array(),
-                ),
-            ))
-
         ;
     }
 

@@ -2557,12 +2557,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "01fca44e61201c9feb7c4ace913ee6c8751dc37e"
+                "reference": "2a58f93a94b97409415a094802d3f047afa9c9f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/01fca44e61201c9feb7c4ace913ee6c8751dc37e",
-                "reference": "01fca44e61201c9feb7c4ace913ee6c8751dc37e",
+                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/2a58f93a94b97409415a094802d3f047afa9c9f8",
+                "reference": "2a58f93a94b97409415a094802d3f047afa9c9f8",
                 "shasum": ""
             },
             "require": {
@@ -2623,7 +2623,7 @@
                 "image",
                 "imagine"
             ],
-            "time": "2015-07-02 06:16:06"
+            "time": "2015-07-07 12:51:40"
         },
         {
             "name": "michelf/php-markdown",
@@ -4871,47 +4871,6 @@
             ],
             "description": "Integrates CodeCoverage with PhpSpec",
             "time": "2014-12-11 11:43:15"
-        },
-        {
-            "name": "leafo/lessphp",
-            "version": "v0.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leafo/lessphp.git",
-                "reference": "0f5a7f5545d2bcf4e9fad9a228c8ad89cc9aa283"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/0f5a7f5545d2bcf4e9fad9a228c8ad89cc9aa283",
-                "reference": "0f5a7f5545d2bcf4e9fad9a228c8ad89cc9aa283",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "lessc.inc.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "lessphp is a compiler for LESS written in PHP.",
-            "homepage": "http://leafo.net/lessphp/",
-            "time": "2014-11-24 18:39:20"
         },
         {
             "name": "pdepend/pdepend",

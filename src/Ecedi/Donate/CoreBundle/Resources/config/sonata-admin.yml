@@ -5,7 +5,7 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              # group: "donation"
+              group: donation
               label: "edonate.admin.model.customer"
               label_catalogue: "sonata-admin"
 

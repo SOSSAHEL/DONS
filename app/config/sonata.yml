@@ -1,8 +1,8 @@
 #sonata.yml
 #
 sonata_admin:
-    # security:
-    #     handler: sonata.admin.security.handler.role
+    security:
+        handler: sonata.admin.security.handler.role
 
     title:      eDonate Administration
     title_logo: bundles/donatecore/images/logo_small.png
@@ -15,7 +15,11 @@ sonata_admin:
                     label: edonate.admin.group.donation
                     label_catalogue: sonata-admin
                     items:
-                        - sonata.admin.customer
+                        -
+                            sonata.admin.customer
+                        # -
+                        #     route:        donate_front_home
+                        #     label:        Front Office
             blocks:
                 -
                     position: left

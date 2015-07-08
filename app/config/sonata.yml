@@ -14,6 +14,7 @@ sonata_admin:
                 donation:
                     label: edonate.admin.group.donation
                     label_catalogue: sonata-admin
+                    icon: <i class="fa fa-lg fa-fw fa-eur"></i>
                     items:
                         - sonata.admin.customer
                         - sonata.admin.intent
@@ -23,12 +24,14 @@ sonata_admin:
                 cms:
                     label: edonate.admin.group.cms
                     label_catalogue: sonata-admin
+                    icon: <i class="fa fa-lg fa-fw fa-wrench"></i>
                     items:
                         -
                             sonata.admin.customer
                 users:
                     label: edonate.admin.group.users
                     label_catalogue: sonata-admin
+                    icon: <i class="fa fa-lg fa-fw fa-users"></i>
                     items:
                         -
                             sonata.admin.customer

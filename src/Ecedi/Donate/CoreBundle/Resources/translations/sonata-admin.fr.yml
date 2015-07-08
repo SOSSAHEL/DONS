@@ -1,0 +1,72 @@
+#sonata-admin.fr.yml
+list:
+    label_id: Id
+    label_amount: Montant
+    label_changed_at: Modifié
+    label_status: Status
+    label_payment_method: Méthode
+    label_customer_first_name: Prénom
+    label_customer_last_name: Nom
+    label_customer_email: Email
+    label_customer_phone: Tel
+    label_first_name: Prénom
+    label_last_name: Nom
+    label_email: Email
+    label_phone: Tel
+    label_address_zipcode: Code postal
+    label_address_city: Ville
+
+show:
+    label_id: Id
+    label_customer_first_name: Prénom
+    label_customer_last_name: Nom
+    label_type: Type
+    label_affectation_code: Affectation
+    label_amount: Montant
+    label_status: Status
+    label_payments: Paiements
+    label_payment_method: Méthode
+    label_changed_at: Modifié
+    label_campaign: Campagne
+    label_civility: Civ.
+    label_first_name: Prénom
+    label_last_name: Nom
+    label_remote_id: Remote Id
+    label_birthday: Date de Naiss.
+    label_phone: Tel
+    label_email: Email
+    label_company: Société
+    label_address_living: Habitant chez
+    label_address_nber: Numéro
+    label_address_street: Rue
+    label_address_extra: Complément
+    label_address_pb: BP
+    label_address_zipcode: Code postal
+    label_address_city: Ville
+    label_address_country: Pays
+
+filter:
+    label_customer_first_name: Prénom
+    label_customer_last_name: Nom
+    label_type: Type
+    label_affectation_code: Affectation
+    label_amount: Montant
+    label_payment_method: Méthode
+    label_changed_at: Modifié
+    label_email: Email
+    label_first_name: Prénom
+    label_last_name: Nom
+    label_address_zipcode: Code postal
+    label_address_city: Ville
+
+breadcrumb:
+    link_intent_list: Dons
+    link_customer_list: Donateurs
+
+edonate:
+    admin:
+        group:
+            donation: Dons
+        model:
+            customers: Donateurs
+            intents: Dons

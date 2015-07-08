@@ -25,16 +25,16 @@ sonata_admin:
                     label: edonate.admin.group.cms
                     label_catalogue: sonata-admin
                     icon: <i class="fa fa-lg fa-fw fa-wrench"></i>
-                    items:
-                        -
-                            sonata.admin.customer
+                    # items:
+                    #     -
+                    #         sonata.admin.customer
                 users:
                     label: edonate.admin.group.users
                     label_catalogue: sonata-admin
                     icon: <i class="fa fa-lg fa-fw fa-users"></i>
-                    items:
-                        -
-                            sonata.admin.customer
+                    # items:
+                    #     -
+                    #         sonata.admin.customer
             blocks:
                 -
                     position: left

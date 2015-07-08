@@ -15,7 +15,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Show\ShowMapper;
-
+use Knp\Menu\ItemInterface;
+use Sonata\AdminBundle\Admin\AdminInterface;
 /**
  * Customer Sonata Admin Configuration
  *
@@ -39,35 +40,17 @@ class IntentAdmin extends Admin
     {
         // Here we set the fields of the ShowMapper variable, $showMapper (but this can be called anything)
         $showMapper
-            ->add('civility')
-            ->add('firstName')
-            ->add('lastName')
             ->add('id', 'identifier')
-            ->add('remoteId')
-            ->add('birthday', 'date')
-            ->add('phone')
-            ->add('email', 'url', array(
-                'hide_protocol' => true,
-                'url' => 'mailto://',
-            ))
-            ->add('company')
-            ->add('addressLiving')
-            ->add('addressNber')
-            ->add('addressStreet')
-            ->add('addressExtra')
-            ->add('addressPb')
-            ->add('addressZipcode')
-            ->add('addressCity')
-            ->add('addressCountry')
-            ->add('intents', 'sonata_type_collection', [
-                    'label' => 'Intents',
-                    'required' => false,
-                    'cascade_validation' => true,
-                    'associated_property' => 'amount',
-                    'by_reference' => false,
-                    'template' => 'DonateCoreBundle:Admin:Customer/intents.html.twig',
-                ],
-                ['edit' => 'inline', 'inline' => 'table'])
+            ->add('customer.firstName')
+            ->add('customer.lastName')
+            ->add('type')
+            ->add('affectationCode')
+            ->add('amount')
+            ->add('status')
+            ->add('paymentMethod')
+            ->add('changedAt')
+            ->add('campaign')
+            ->add('payments')
             ->end()
         ;
     }
@@ -75,12 +58,13 @@ class IntentAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('firstName', 'text', array('label' => 'First name'))
-            ->add('lastName', 'text', array('label' => 'Last name'))
-            ->add('email', 'text', array('label' => 'Email'))
-            ->add('phone', 'text', array('label' => 'Phone'))
-            ->add('addressZipcode', 'text', array('label' => 'Zipcode'))
-            ->add('addressCity', 'text', array('label' => 'City'))
+            ->add('customer.firstName')
+            ->add('customer.lastName')
+            ->add('type')
+            ->add('affectationCode')
+            ->add('amount')
+            ->add('paymentMethod')
+            ->add('changedAt')
         ;
     }
 
@@ -88,11 +72,13 @@ class IntentAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('email')
-            ->add('firstName')
-            ->add('lastName')
-            ->add('addressZipcode')
-            ->add('addressCity')
+            ->add('customer.firstName')
+            ->add('customer.lastName')
+            ->add('type')
+            ->add('affectationCode')
+            ->add('amount')
+            ->add('paymentMethod')
+            ->add('changedAt')
         ;
     }
 
@@ -103,22 +89,33 @@ class IntentAdmin extends Admin
             ->addIdentifier('id', null, array(
                 'route' => array('name' => 'show'),
             ))
-            ->addIdentifier('firstName', null, array(
+            ->add('amount')
+            ->add('changedAt')
+            ->add('status')
+            ->add('paymentMethod')
+
+            ->addIdentifier('customer.firstName', null, array(
                 'route' => array('name' => 'show'),
             ))
-            ->addIdentifier('lastName', null, array(
+            ->addIdentifier('customer.lastName', null, array(
                 'route' => array('name' => 'show'),
             ))
-            ->addIdentifier('email', null, array(
-                'template' => 'DonateCoreBundle:Admin:Customer/email.html.twig', ))
-            ->add('phone')
-            ->add('addressZipcode')
-            ->add('addressCity')
+            ->addIdentifier('customer.email')
+            ->add('customer.phone')
         ;
     }
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->clearExcept(array('list', 'show'));
+        $collection->clearExcept(array('list', 'show', 'export'));
     }
+
+    /*
+    protected function configureTabMenu(ItemInterface $menu, $action, AdminInterface $childAdmin = null)
+    {
+        $menu->addChild($this->trans('Front Office'), array(
+            'uri' => $this->generateUrl('list', []),
+        ));
+    }
+    */
 }

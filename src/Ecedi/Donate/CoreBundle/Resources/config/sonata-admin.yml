@@ -8,13 +8,14 @@ services:
               group: donation
               label: "edonate.admin.model.customers"
               label_catalogue: "sonata-admin"
+              pager_type: "simple"
 
         arguments:
             - ~
             - Ecedi\Donate\CoreBundle\Entity\Customer
             - ~
         calls:
-            - [ setTranslationDomain, [admin]]
+            - [ setTranslationDomain, [sonata-admin]]
             - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
             - [ setTemplate, [show, DonateCoreBundle:Admin:Customer/show.html.twig]]
 
@@ -29,9 +30,8 @@ services:
 
         arguments:
             - ~
-            - Ecedi\Donate\CoreBundle\Entity\Customer
+            - Ecedi\Donate\CoreBundle\Entity\Intent
             - ~
         calls:
-            - [ setTranslationDomain, [admin]]
+            - [ setTranslationDomain, [sonata-admin]]
             - [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
-            - [ setTemplate, [show, DonateCoreBundle:Admin:Customer/show.html.twig]]

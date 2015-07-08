@@ -12,7 +12,6 @@ namespace Ecedi\Donate\CoreBundle\Admin;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Show\ShowMapper;
 
@@ -71,18 +70,6 @@ class CustomerAdmin extends Admin
             ->end()
         ;
     }
-    // Fields to be shown on create/edit forms
-    protected function configureFormFields(FormMapper $formMapper)
-    {
-        $formMapper
-            ->add('firstName', 'text', array('label' => 'First name'))
-            ->add('lastName', 'text', array('label' => 'Last name'))
-            ->add('email', 'text', array('label' => 'Email'))
-            ->add('phone', 'text', array('label' => 'Phone'))
-            ->add('addressZipcode', 'text', array('label' => 'Zipcode'))
-            ->add('addressCity', 'text', array('label' => 'City'))
-        ;
-    }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -101,7 +88,7 @@ class CustomerAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id', null, array(
-                'route' => array('name' => 'show'),
+                'route' => array('name' => 'edit'),
             ))
             ->addIdentifier('firstName', null, array(
                 'route' => array('name' => 'show'),
@@ -119,6 +106,13 @@ class CustomerAdmin extends Admin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->clearExcept(array('list', 'show'));
+        $collection->clearExcept(array('list', 'show', 'export', 'edit'));
     }
+
+    // public function getExportFields()
+    // {
+    //     return array('id','firstName','lastName',
+    //     'email','phone', 'addressZipcode', 'addressCity',
+    //     );
+    // }
 }

@@ -87,7 +87,7 @@ class IntentAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id', null, array(
-                'route' => array('name' => 'show'),
+                'route' => array('name' => 'edit'),
             ))
             ->add('amount')
             ->add('changedAt')
@@ -107,7 +107,7 @@ class IntentAdmin extends Admin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->clearExcept(array('list', 'show', 'export'));
+        $collection->clearExcept(array('list', 'show', 'export', 'edit'));
     }
 
     /*
